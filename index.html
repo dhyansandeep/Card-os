@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CardOS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-image: url('./card.jpg');">
+  <div id="window1" class="window info-window" onmousedown="bringToFront(this)">
+    <div id="window1header" class="window-header">
+      <span class="header-title">DRAG HERE</span>
+      <button class="close-btn" onclick="closeWindow('window1')">X</button>
+    </div>
+    <div class="window-body">
+      <h1 class="info-title">welcome to CardOS</h1>
+      <p class="info-description">
+       Card tricks are illusions performed using a standard deck of playing cards to entertain and mystify an audience. They rely on a combination of mathematical principles, physical dexterity, and psychological manipulation.
+      </p>
+      <p class="author-tag">-BY DSK</p>
+      <a class="stardance-link" href="https://stardance.hackclub.com/@dhyansandeep2008/projects" target="_blank" rel="noopener">my stardance</a>
+    </div>
+  </div>
+  <div id="window2" class="window notes-window" onmousedown="bringToFront(this)">
+    <div id="window2header" class="window-header">
+      <span class="header-title">NOTES</span>
+      <button class="close-btn" onclick="closeWindow('window2')">X</button>
+    </div>
+    <div class="window-body">
+      <textarea class="notes-area" placeholder="Write your card tricks here..."></textarea>
+    </div>
+  </div>
+  <div id="window3" class="window calendar-window" onmousedown="bringToFront(this)">
+    <div id="window3header" class="window-header">
+      <span class="header-title">CALENDAR</span>
+      <button class="close-btn" onclick="closeWindow('window3')">X</button>
+    </div>
+    <div class="window-body">
+      <div class="calendar-header">
+        <button class="cal-nav-btn" onclick="changeMonth(-1)">&lt;</button>
+        <span id="monthYearTitle" class="calendar-title">Month Year</span>
+        <button class="cal-nav-btn" onclick="changeMonth(1)">&gt;</button>
+      </div>
+      <div class="calendar-weekdays">
+        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+      </div>
+      <div id="calendarDays" class="calendar-days"></div>
+    </div>
+  </div>
+  <div class="taskbar">
+    <div class="taskbar-left">
+      <span class="taskbar-pill brand-pill">Card-OS</span>
+      <button class="app-icon-btn" onclick="openWindow('window2')" title="Notes">
+        <img src="./Notes.png" alt="Notes" class="taskbar-icon-img" onerror="this.style.display='none'">
+      </button>
+      <button class="taskbar-pill btn-pill" onclick="openWindow('window3')">
+        📅 Calendar
+      </button>
+    </div>
+    <button class="taskbar-pill btn-pill" onclick="openWindow('window1')">
+      Open Info
+    </button>
+    <div id="timeElement" class="taskbar-pill time-pill">
+      Loading time...
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
