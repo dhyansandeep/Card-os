@@ -1,6 +1,6 @@
 # CardOS
 
-CardOS is a lightweight, web-based desktop environment (WebOS) themed around card tricks and sleight of hand. Built HTML, CSS, and JavaScript, it features a glassmorphic user interface,floating desktop windows, smooth drag-and-drop mechanics, and desktop utility applications including a notes and interactive calendar that gives you the option to show the future/past date.Stay tuned since im planning to add more apps and windows to the card os and plan on making another app generator.
+CardOS is a web-based desktop environment (WebOS) themed around card tricks and sleight of hand. Built HTML, CSS, and JavaScript, it features a glassmorphic user interface,floating desktop windows, smooth drag-and-drop mechanics, and desktop utility applications including a notes and interactive calendar that gives you the option to show the future/past date.Stay tuned since im planning to add more apps and windows to the card os and plan on making another app generator and plan on adding more animations.
 
 Live Demo: https://dhyansandeep.github.io/Card-os/
 
@@ -36,5 +36,4 @@ README.md       # Project documentation
 ## Author
 
 * DSK (Dhyan Sandeep)
-  * GitHub: https://github.com/dhyansandeep/Card-os
   * Hack Club Showcase:https://stardance.hackclub.com/@DSK/projects
