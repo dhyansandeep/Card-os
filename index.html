@@ -1,69 +1,74 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CardOS</title>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image: url('./card.jpg');">
-  <div id="window1" class="window info-window" onmousedown="bringToFront(this)">
-    <div id="window1header" class="window-header">
+<body style="margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; font-family: system-ui, -apple-system, sans-serif; background-image: url('./card.jpg'); background-size: cover; background-position: center; background-color: #1a0000; color: #f8f9fa;">
+  
+  <div id="window1" class="window info-window" style="position: absolute; top: 50px; left: 50px; width: 350px; background: rgba(35, 5, 5, 0.95); backdrop-filter: blur(8px); border-radius: 10px; box-shadow: 0 0 35px rgba(220, 20, 20, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1); display: flex; flex-direction: column; border: 1px solid rgba(255, 50, 50, 0.3);" onmousedown="bringToFront(this)">
+    <div id="window1header" class="window-header" style="background: linear-gradient(to right, #4a0a0a, #2a0000); padding: 12px 15px; cursor: move; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 50, 50, 0.4); border-radius: 10px 10px 0 0; user-select: none; font-weight: 600; font-size: 14px; color: #ffcccc;">
       <span class="header-title">DRAG HERE</span>
-      <button class="close-btn" onclick="closeWindow('window1')">X</button>
+      <button class="close-btn" style="background: #ff5f56; color: transparent; border: 1px solid #e0443e; border-radius: 50%; width: 14px; height: 14px; cursor: pointer; padding: 0;" onclick="closeWindow('window1')"></button>
     </div>
-    <div class="window-body">
-      <h1 class="info-title">welcome to CardOS</h1>
-      <p class="info-description">
+    <div class="window-body" style="padding: 20px; max-height: 400px; overflow-y: auto;">
+      <h1 class="info-title" style="margin-top: 0; font-size: 22px; color: #ffffff; text-shadow: 0 0 10px rgba(255,50,50,0.5);">Welcome to CardOS</h1>
+      <p class="info-description" style="line-height: 1.5; color: #e0c0c0;">
        Card tricks are illusions performed using a standard deck of playing cards to entertain and mystify an audience. They rely on a combination of mathematical principles, physical dexterity, and psychological manipulation.
       </p>
-      <p class="author-tag">-BY DSK</p>
-      <a class="stardance-link" href="https://stardance.hackclub.com/@dhyansandeep2008/projects" target="_blank" rel="noopener">my stardance</a>
+      <p class="author-tag" style="font-weight: 600; color: #ff9999; font-size: 14px;">-BY DSK</p>
+      <a class="stardance-link" style="color: #ff6666; font-weight: 600; text-decoration: none; display: inline-block; margin-top: 10px; text-shadow: 0 0 8px rgba(255,0,0,0.4);" href="https://stardance.hackclub.com/@DSK/projects" target="_blank" rel="noopener">My stardance &rarr;</a>
     </div>
   </div>
-  <div id="window2" class="window notes-window" onmousedown="bringToFront(this)">
-    <div id="window2header" class="window-header">
+
+  <div id="window2" class="window notes-window" style="position: absolute; top: 100px; left: 450px; width: 350px; background: rgba(35, 5, 5, 0.95); backdrop-filter: blur(8px); border-radius: 10px; box-shadow: 0 0 35px rgba(220, 20, 20, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1); display: none; flex-direction: column; border: 1px solid rgba(255, 50, 50, 0.3);" onmousedown="bringToFront(this)">
+    <div id="window2header" class="window-header" style="background: linear-gradient(to right, #4a0a0a, #2a0000); padding: 12px 15px; cursor: move; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 50, 50, 0.4); border-radius: 10px 10px 0 0; user-select: none; font-weight: 600; font-size: 14px; color: #ffcccc;">
       <span class="header-title">NOTES</span>
-      <button class="close-btn" onclick="closeWindow('window2')">X</button>
+      <button class="close-btn" style="background: #ff5f56; color: transparent; border: 1px solid #e0443e; border-radius: 50%; width: 14px; height: 14px; cursor: pointer; padding: 0;" onclick="closeWindow('window2')"></button>
     </div>
-    <div class="window-body">
-      <textarea class="notes-area" placeholder="Write your card tricks here..."></textarea>
+    <div class="window-body" style="padding: 15px; max-height: 400px; overflow-y: auto;">
+      <textarea class="notes-area" style="width: 100%; height: 220px; resize: vertical; border: 1px solid rgba(255, 50, 50, 0.4); border-radius: 6px; padding: 10px; box-sizing: border-box; font-family: inherit; font-size: 14px; color: #ffffff; background: rgba(15, 0, 0, 0.6); outline: none; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);" placeholder="Write your card tricks here..."></textarea>
     </div>
   </div>
-  <div id="window3" class="window calendar-window" onmousedown="bringToFront(this)">
-    <div id="window3header" class="window-header">
+
+  <div id="window3" class="window calendar-window" style="position: absolute; top: 150px; left: 150px; width: 350px; background: rgba(35, 5, 5, 0.95); backdrop-filter: blur(8px); border-radius: 10px; box-shadow: 0 0 35px rgba(220, 20, 20, 0.5), inset 0 0 15px rgba(255, 0, 0, 0.1); display: none; flex-direction: column; border: 1px solid rgba(255, 50, 50, 0.3);" onmousedown="bringToFront(this)">
+    <div id="window3header" class="window-header" style="background: linear-gradient(to right, #4a0a0a, #2a0000); padding: 12px 15px; cursor: move; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 50, 50, 0.4); border-radius: 10px 10px 0 0; user-select: none; font-weight: 600; font-size: 14px; color: #ffcccc;">
       <span class="header-title">CALENDAR</span>
-      <button class="close-btn" onclick="closeWindow('window3')">X</button>
+      <button class="close-btn" style="background: #ff5f56; color: transparent; border: 1px solid #e0443e; border-radius: 50%; width: 14px; height: 14px; cursor: pointer; padding: 0;" onclick="closeWindow('window3')"></button>
     </div>
-    <div class="window-body">
-      <div class="calendar-header">
-        <button class="cal-nav-btn" onclick="changeMonth(-1)">&lt;</button>
+    <div class="window-body" style="padding: 20px; max-height: 400px; overflow-y: auto;">
+      <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-weight: bold; color: #ffffff; text-shadow: 0 0 5px rgba(255,50,50,0.5);">
+        <button class="cal-nav-btn" style="background: rgba(255, 50, 50, 0.2); border: 1px solid rgba(255, 50, 50, 0.4); border-radius: 6px; cursor: pointer; padding: 4px 10px; color: #ffcccc; font-weight: bold;" onclick="changeMonth(-1)">&lt;</button>
         <span id="monthYearTitle" class="calendar-title">Month Year</span>
-        <button class="cal-nav-btn" onclick="changeMonth(1)">&gt;</button>
+        <button class="cal-nav-btn" style="background: rgba(255, 50, 50, 0.2); border: 1px solid rgba(255, 50, 50, 0.4); border-radius: 6px; cursor: pointer; padding: 4px 10px; color: #ffcccc; font-weight: bold;" onclick="changeMonth(1)">&gt;</button>
       </div>
-      <div class="calendar-weekdays">
+      <div class="calendar-weekdays" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 13px; font-weight: bold; margin-bottom: 8px; color: #ff9999;">
         <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
       </div>
-      <div id="calendarDays" class="calendar-days"></div>
+      <div id="calendarDays" class="calendar-days" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; text-align: center; font-size: 14px;"></div>
     </div>
   </div>
-  <div class="taskbar">
-    <div class="taskbar-left">
-      <span class="taskbar-pill brand-pill">Card-OS</span>
-      <button class="app-icon-btn" onclick="openWindow('window2')" title="Notes">
-        <img src="./Notes.png" alt="Notes" class="taskbar-icon-img" onerror="this.style.display='none'">
+
+  <div class="taskbar" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 50px; background: rgba(20, 0, 0, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-top: 1px solid rgba(255, 50, 50, 0.3); box-shadow: 0 -5px 25px rgba(220, 20, 20, 0.4); display: flex; justify-content: space-between; align-items: center; padding: 0 20px; box-sizing: border-box; color: rgb(217, 58, 58); z-index: 99999;">
+    <div class="taskbar-left" style="display: flex; gap: 12px; align-items: center;">
+      <span class="taskbar-pill brand-pill" style="font-weight: 800; letter-spacing: 0.5px; background: transparent; border: none; pointer-events: none; padding: 6px 0; color: #ffcccc; text-shadow: 0 0 10px rgba(255,50,50,0.8); font-size: 15px; margin-right: 10px;">Card-OS</span>
+      <button class="app-icon-btn" style="background: rgba(255, 50, 50, 0.15); border: 1px solid rgba(255, 50, 50, 0.3); border-radius: 8px; cursor: pointer; padding: 4px 8px; display: flex; align-items: center; transition: background 0.2s; box-shadow: 0 0 10px rgba(255,0,0,0.2);" onclick="openWindow('window2')" title="Notes">
+        <img src="./Notes.png" alt="Notes" class="taskbar-icon-img" style="height: 22px; width: auto;" onerror="this.style.display='none'; this.parentNode.innerText='📝 Notes'; this.parentNode.style.color='#ffcccc';">
       </button>
-      <button class="taskbar-pill btn-pill" onclick="openWindow('window3')">
+      <button class="taskbar-pill btn-pill" style="background: rgba(255, 50, 50, 0.15); padding: 6px 14px; border-radius: 8px; border: 1px solid rgba(255, 50, 50, 0.3); color: #ffcccc; cursor: pointer; font-size: 13px; font-weight: 500; box-shadow: 0 0 10px rgba(255,0,0,0.2);" onclick="openWindow('window3')">
         📅 Calendar
       </button>
+      <button class="taskbar-pill btn-pill" style="background: rgba(255, 50, 50, 0.15); padding: 6px 14px; border-radius: 8px; border: 1px solid rgba(255, 50, 50, 0.3); color: #ffcccc; cursor: pointer; font-size: 13px; font-weight: 500; box-shadow: 0 0 10px rgba(255,0,0,0.2);" onclick="openWindow('window1')">
+        ℹ️ Open Info
+      </button>
     </div>
-    <button class="taskbar-pill btn-pill" onclick="openWindow('window1')">
-      Open Info
-    </button>
-    <div id="timeElement" class="taskbar-pill time-pill">
+    <div id="timeElement" class="taskbar-pill time-pill" style="background: rgba(40, 5, 5, 0.6); padding: 6px 14px; border-radius: 8px; border: 1px solid rgba(255, 50, 50, 0.2); color: #ffcccc; font-size: 13px; font-variant-numeric: tabular-nums; box-shadow: inset 0 0 8px rgba(0,0,0,0.5);">
       Loading time...
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -1,11 +1,15 @@
+
 let highestZIndex = 10;
+    
 document.querySelectorAll('.window').forEach((win) => {
   dragElement(win);
 });
+
 function bringToFront(element) {
   highestZIndex++;
   element.style.zIndex = highestZIndex;
 }
+
 function openWindow(id) {
   const element = document.getElementById(id);
   if (element) {
@@ -13,12 +17,14 @@ function openWindow(id) {
     bringToFront(element);
   }
 }
+
 function closeWindow(id) {
   const element = document.getElementById(id);
   if (element) {
     element.style.display = "none";
   }
 }
+
 function dragElement(element) {
   let initialX = 0, initialY = 0, currentX = 0, currentY = 0;
   const header = document.getElementById(element.id + "header");
@@ -28,6 +34,7 @@ function dragElement(element) {
   } else {
     element.onmousedown = startDragging;
   }
+
   function startDragging(e) {
     e = e || window.event;
     e.preventDefault();
@@ -37,6 +44,7 @@ function dragElement(element) {
     document.onmouseup = stopDragging;
     document.onmousemove = elementDrag;
   }
+
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
@@ -47,58 +55,72 @@ function dragElement(element) {
     element.style.top = (element.offsetTop - currentY) + "px";
     element.style.left = (element.offsetLeft - currentX) + "px";
   }
+
   function stopDragging() {
     document.onmouseup = null;
     document.onmousemove = null;
   }
 }
+
 function updateClock() {
   const timeElement = document.getElementById("timeElement");
   if (timeElement) {
     const now = new Date();
     timeElement.textContent = now.toLocaleString('en-US', {
-      month: 'numeric',
-      day: 'numeric',
-      year: 'numeric',
-      hour: 'numeric',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
+      month: 'short', day: 'numeric',
+      hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true
     });
   }
 }
+
 setInterval(updateClock, 1000);
 updateClock();
+
 let currentDate = new Date();
+
 function renderCalendar() {
   const monthYearTitle = document.getElementById('monthYearTitle');
   const calendarDays = document.getElementById('calendarDays');
   if (!monthYearTitle || !calendarDays) return;
+  
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  
   monthYearTitle.textContent = `${monthNames[month]} ${year}`;
   calendarDays.innerHTML = '';
+  
   const firstDayIndex = new Date(year, month, 1).getDay();
   const totalDays = new Date(year, month + 1, 0).getDate();
   const today = new Date();
+  
   for (let i = 0; i < firstDayIndex; i++) {
     const emptyDiv = document.createElement('div');
     emptyDiv.classList.add('calendar-day', 'empty');
+    emptyDiv.style.cssText = "padding: 8px 0; border-radius: 6px; background: transparent; border: none;";
     calendarDays.appendChild(emptyDiv);
   }
+  
   for (let day = 1; day <= totalDays; day++) {
     const dayDiv = document.createElement('div');
     dayDiv.classList.add('calendar-day');
     dayDiv.textContent = day;
+    
     if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
       dayDiv.classList.add('today');
+      dayDiv.style.cssText = "padding: 8px 0; border-radius: 6px; background: rgba(220, 20, 20, 0.7); color: #ffffff; border: 1px solid #ff5555; font-weight: bold; box-shadow: 0 0 15px rgba(255, 50, 50, 0.6);";
+    } else {
+      dayDiv.style.cssText = "padding: 8px 0; border-radius: 6px; background: rgba(50, 10, 10, 0.6); border: 1px solid rgba(255, 50, 50, 0.2); color: #e0c0c0; cursor: default;";
     }
+    
     calendarDays.appendChild(dayDiv);
   }
 }
+
 function changeMonth(offset) {
   currentDate.setMonth(currentDate.getMonth() + offset);
   renderCalendar();
 }
+
 renderCalendar();
+
